@@ -2,18 +2,35 @@
 
 #Method 1 (Use Non-recursion)
 
-nterms =int(input("How many terms? "))
-dp = [0]*(nterms+1)
-dp[0] = 0
-dp[1] = 1
-for i in range(2,nterms+1):
-  dp[i]=dp[i-1]+dp[i-2]
-print("Fibonacci sequence upto", nterms, "th term :")
-j=0
-while j < len(dp)-1:
-    print(dp[j], end=" ")
-    j = j + 1
 
+# Write a iterative program to calculate Fibonacci numbers and find its step count.
+COUNT = 0
+x=int(input("Enter Number of Terms :"))
+first=0
+sec=1
+c=0
+if(x<0):
+    print("Enter valid input..")
+elif(x==0):
+    print(0)
+elif(x==1):
+    print("Fibbonacci series upto",x,"is",first)
+else:
+    while c<x:
+        print(first) 
+        COUNT = COUNT +1
+        nth=first+sec 
+        COUNT = COUNT +1
+        first=sec 
+        COUNT = COUNT +1
+        sec=nth 
+        COUNT = COUNT +1
+        c+=1  
+        COUNT = COUNT +1
+        
+
+print("Steps required using Counter ", COUNT)
+     
 ###########################################################################3
 
 #Method 2 (Use Recursion)
